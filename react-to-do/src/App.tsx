@@ -1,9 +1,13 @@
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
-    </div>
-  );
-}
+import { TaskList } from './components/TaskList'
+import { Header } from "./components/Header";
+import './styles/global.scss'
 
-export default App;
+
+export function App() {
+  return (
+    <>
+      <Header />
+      <TaskList />
+    </>
+  )
+}
