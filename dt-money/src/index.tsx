@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createServer, Model } from 'miragejs';
+import { v4 as uuidv4 } from 'uuid';
+
 import App from './App';
 
 createServer({
@@ -42,6 +44,12 @@ createServer({
       const data = JSON.parse(request.requestBody);
 
       return schema.create('transaction', data);
+    })
+
+    this.post('/sessions', (_, request) => {
+      const data = JSON.parse(request.requestBody);
+
+      return { token: uuidv4(), user: { id: uuidv4(), email: data.email } }
     })
   }
 })
