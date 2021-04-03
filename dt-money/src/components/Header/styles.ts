@@ -14,6 +14,12 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  div {
+    button + button {
+      margin-left: 1rem;
+    }
+  }
+
   button {
     font-size: 1rem;
     color: #fff;
